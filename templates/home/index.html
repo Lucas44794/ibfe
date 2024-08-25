@@ -1,24 +1,37 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="remove.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{% static 'styles/remove.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/style.css' %}">
         <title>IBF</title>
+        <style>
+            body {
+            background-image: url("{% static 'assets/1.jpeg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            }
+        </style>
+
     </head>
     <body>
 <body>
     <header>
+        
         <h2>Seja Bem-vindo</h2>
         <h1>Instituto Biblico Fé</h1>
     </header>
 
     <nav>
-        <a href="index.html">Início</a> |
+        <a href="{% url 'index' %}">Início</a> |
         <a href="#cursos">Cursos</a> |
-        <a href="contato.html">Contato</a> |
+        <a href="{% url 'contato' %}">Contato</a> |
         <a href="#cursos">Nossos Cursos</a> |
         <a href="#historia">Nossa História</a> |
         <a href="login.html">Login</a>
