@@ -5,3 +5,6 @@ def index(request):
 
 def contato(request):
     return render(request, 'home/contato.html')
+
+def login(request):
+    return render(request, 'home/login.html')

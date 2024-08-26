@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="remove.css">
-    <link rel="stylesheet" href="style.css">
-    <title>IBF</title>
-</head>
-<body>
-    <header>
-        <h2>Seja Bem-vindo</h2>
-        <h1>Instituto Biblico Fé</h1>
-    </header>
+{% extends 'home/base.html' %}
+{% load static %}
 
-    <nav>
-        <a href="index.html">Início</a> |
-        <a href="#cursos">Cursos</a> |
-        <a href="contato.html">Contato</a> |
-        <a href="#cursos">Nossos Cursos</a> |
-        <a href="#historia">Nossa História</a> |
-        <a href="login.html">Login</a>
-    </nav>
+{% block content %}
 
     <main>
         <section id="contato">
@@ -46,8 +27,4 @@
         </section>
     </main>
 
-    <footer>
-        <p>© 2024 Instituto Biblico Fé</p>
-    </footer>
-</body>
-</html>
+    {% endblock %}
