@@ -5,7 +5,7 @@
     <main>
         <section id="login" style="max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
             <h2 class="h2login" style="text-align: center; color: #333; margin-bottom: 30px; font-size: 45px;">LOGIN</h2>
-            <form id="loginForm" method="post" action="{% url 'login' %}" style="display: flex; flex-direction: column; gap: 15px;">
+            <form id="loginForm" method="POST" action="{% url 'login' %}" style="display: flex; flex-direction: column; gap: 15px;">
                 {% csrf_token %}
                 {% for field in form.visible_fields %}
                 <div style="display: flex; flex-direction: column;">

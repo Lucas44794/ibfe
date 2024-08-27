@@ -6,6 +6,10 @@ header {
     background-color: #007BFF;
 }
 
+.menuzin{
+    background-color: #000000;
+}
+
 nav {
     background-color: #f8f9fa;
     padding: 10px;
@@ -122,7 +126,9 @@ footer {
 #cadastroForm button:hover {
     background-color: #218838;
 }
-
+.titulo-pagina{
+    font-size: 85px;
+}
 
 
 /* Consulta de mídia para dispositivos com largura máxima de 600px */
@@ -133,6 +139,7 @@ footer {
     header, nav, main, form, footer {
         margin: 0;
         padding: 10px;
+        font-size: 50px;
     }
     #login {
         height: auto;

@@ -1,4 +1,26 @@
 {% load static %}
-<footer>
-    <p>© 2024 Instituto Biblico Fé</p>
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #007BFF; color: white;">
+    <div class="social-media" style="display: flex; align-items: center;">
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
+            <li style="display: flex; align-items: center; margin-right: 10px;">
+                <a href="https://www.instagram.com/your-instagram-username" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: white;">
+                    <img src="{% static 'assets/instagram.png' %}" alt="Instagram" style="width: 20px; height: 20px; margin-right: 5px;">
+                    Instagram
+                </a>
+            </li>
+            <li style="display: flex; align-items: center; margin-right: 10px;">
+                <a href="https://www.facebook.com/your-facebook-page" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: white;">
+                    <img src="{% static 'assets/facebook.png' %}" alt="Facebook" style="width: 20px; height: 20px; margin-right: 5px;">
+                    Facebook
+                </a>
+            </li>
+            <li style="display: flex; align-items: center;">
+                <a href="https://wa.me/your-whatsapp-number" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: white;">
+                    <img src="{% static 'assets/whatsapp.png' %}" alt="WhatsApp" style="width: 20px; height: 20px; margin-right: 5px;">
+                    WhatsApp
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p style="margin: 0; flex-grow: 1; text-align: center;">© 2024 Instituto Biblico Fé</p>
 </footer>

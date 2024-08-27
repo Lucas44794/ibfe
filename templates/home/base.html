@@ -21,13 +21,26 @@
             flex-direction: column;
             min-height: 100vh;
             }
+            .menuzin{
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+            .menuzin a{
+                padding: 10px;
+            }
+            .menuzin a:hover{
+                background-color: rgb(229, 255, 80);
+                color: black;
+                font-weight: 400;
+                padding: 10px;
+            }
         </style>
 
     </head>
     
 <body>    
     <header>
-        <h1>Instituto Biblico Fé</h1>
+        <h1 class="titulo-pagina" style="font-size: 45px;">INSTITUTO BIBLICO FÉ</h1>
     </header>
     {% include 'home/partials/_menu.html' %}
     {% block content %} {% endblock %}

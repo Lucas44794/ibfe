@@ -2,29 +2,22 @@
 {% load static %}
 
 {% block content %}
-
     <main>
-        <section id="contato">
-            <h2>Contato</h2>
-            <!-- Aqui você pode adicionar os dados de contato da empresa, como endereço, telefone, email, redes sociais, etc. -->
-            <p>Endereço: Rua Humberto Mattarazzo, 2345 </p>
-            <p>Distrito Industrial, Santa Bárbara d'Oeste/SP</p>
-            <p>Telefone / WhatsApp: (19) 99168-6675</p>
-            <p>Facebook: facebook.com/</p>
-            <p>Instagram: instagram.com/</p>
-            <!-- Você também pode adicionar um formulário para que os visitantes possam enviar mensagens para a empresa. -->
-            <form id="contatoForm" action="/contato" method="post">
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" placeholder="Seu Nome Aqui"><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" placeholder="Seu E-mail Aqui"><br>
-                <label for="assunto">Assunto:</label><br>
-                <input type="text" id="assunto" name="assunto" placeholder="Elogio / Reclamação / Duvida"><br>
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="Digite aqui seu texto a ser enviado"></textarea><br>
-                <input type="submit" value="Enviar">
+        <section id="contato" style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <h2 style="text-align: center; color: #000; margin-bottom: 30px; font-size: 45px;">Contato</h2>
+            <p style="color: #000;">Endereço: Rua Humberto Mattarazzo, 2345 </p>
+            <p style="color: #000;">Distrito Industrial, Santa Bárbara d'Oeste/SP</p>
+            <form id="contatoForm" action="/contato" method="post" style="display: flex; flex-direction: column; gap: 15px;">
+                <label for="nome" style="margin-bottom: 5px; color: #000;">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu Nome Aqui" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <label for="email" style="margin-bottom: 5px; color: #000;">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Seu E-mail Aqui" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <label for="assunto" style="margin-bottom: 5px; color: #000;">Assunto:</label>
+                <input type="text" id="assunto" name="assunto" placeholder="Elogio / Reclamação / Duvida" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <label for="mensagem" style="margin-bottom: 5px; color: #000;">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%;"></textarea>
+                <input type="submit" value="Enviar" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
             </form>
         </section>
     </main>
-
-    {% endblock %}
+{% endblock %}
