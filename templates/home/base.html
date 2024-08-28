@@ -11,8 +11,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <title>IBF</title>
         <style>
+            .alert-primary{
+                width: 280px;
+                font-weight: 500;
+            }
             body {
             background-image: url("{% static 'assets/1.jpeg' %}");
             background-repeat: no-repeat;
@@ -40,9 +45,16 @@
     
 <body>    
     <header>
+
         <h1 class="titulo-pagina" style="font-size: 45px;">INSTITUTO BIBLICO FÉ</h1>
     </header>
+
     {% include 'home/partials/_menu.html' %}
+    {% for message in messages %}
+        <div class="alert alert-primary" role="alert">
+            <p class="messages">{{message}}</p>
+        </div>
+    {% endfor %}
     {% block content %} {% endblock %}
     {% include 'home/partials/_footer.html' %}
 </body>

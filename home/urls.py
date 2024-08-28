@@ -4,6 +4,6 @@ from home.views import index, contato, login
 
 urlpatterns = [
     path('', index, name='index'),
-    path('/contato', contato, name='contato'),
+    path('contato', contato, name='contato'),
     
 ]
