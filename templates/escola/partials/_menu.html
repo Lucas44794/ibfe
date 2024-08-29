@@ -1,0 +1,16 @@
+{% load static %}
+
+<main class="principal">
+    <section class="menu-lateral">
+        <nav class="menu-lateral__navegacao">
+            <h4 style="color: white; padding: 20px; font-size: 25px; text-decoration: underline;">Menu</h4>
+            <a href="{% url 'modulos' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Cursos</a>
+            <a href="#"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Módulo Atual</a>
+            <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Módulos adicionais</a>
+            <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Boletos</a>
+            <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Notas</a>
+            <a href="{% url 'logout' %}"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Deslogar-se</a>
+        </nav>
+    </section>
+
+    
