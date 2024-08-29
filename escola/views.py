@@ -4,6 +4,9 @@ from django.contrib import auth, messages
 def modulos(request):
     return render(request, 'escola/curso.html')
 
+def curso(request):
+    return render(request, 'escola/visaocurso.html')
+
 def logout(request):
     auth.logout(request)
     messages.success(request, "Logout efetuado com sucesso!")

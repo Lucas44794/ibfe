@@ -1,20 +1,6 @@
+{% extends 'escola/baseescola.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{% static '/assets/favicon/logo.png' %}" type="image/x-icon">
-    <title>Instituto Biblico Fé</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static '/styles/style_modulos.css' %}">
-</head>
-
-<body>
+{% block content %}
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static '/assets/logo/Logo.png' %}" alt="Logo do Instituto Biblico Fé" style="width: 250px; height: 100px;" />
@@ -30,14 +16,14 @@
                 <nav class="menu-lateral__navegacao">
                     <h4 style="color: white; padding: 20px; font-size: 25px; text-decoration: underline;">Menu</h4>
                     <a href="{% url 'modulos' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Cursos</a>
-                    <a href="#"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Mais vistas</a>
-                    <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Novas</a>
+                    <a href="#"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Módulo Atual</a>
+                    <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Módulos adicionais</a>
                     <a href="{% url 'logout' %}"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Deslogar-se</a>
                 </nav>
             </section>
             <section class="conteudo">
                 <section class="banner">
-                    <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner Alura Space">
+                    <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner IBF">
                     <h1 class="banner__titulo"> A revelação da Palavra ministrada</h1>
                 </section>
                 <section class="galeria">
@@ -45,7 +31,7 @@
                         <h2 class="cards__titulo">Cursos disponiveis para você</h2>
                         <ul class="cards__lista">
                             <li class="card">
-                                <a href="imagem.html">
+                                <a href="{% url 'curso' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
@@ -60,7 +46,7 @@
                                 </div>
                             </li>
                             <li class="card">
-                                <a href="imagem.html">
+                                <a href="{% url 'curso' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
@@ -83,15 +69,13 @@
     </div>
     <footer class="rodape">
         <div class="rodape__icones">
-            <a href="https://twitter.com/AluraOnline" target=”_blank” >
+            <a href="https://twitter.com/" target=”_blank” >
                 <img src="{% static '/assets/ícones/1x/twitter.png' %}" alt="ícone twitter">
             </a>
-            <a href="https://www.instagram.com/aluraonline/" target=”_blank” >
+            <a href="https://www.instagram.com/" target=”_blank” >
                 <img src="{% static '/assets/ícones/1x/instagram.png' %}" alt="ícone instagram">
             </a>
         </div>
         <p class="rodape__texto">Desenvolvido por Lucas Silva - (19) 98142-2055</p>
     </footer>
-</body>
-
-</html>
+{% endblock %}
