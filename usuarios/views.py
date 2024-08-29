@@ -21,7 +21,7 @@ def login(request):
             if usuario is not None:
                 auth.login(request, usuario)
                 messages.success(request, f"{nome} logado com sucesso")
-                return redirect('index')
+                return redirect('modulos')
             else:
                 messages.error(request, "Erro ao efetuar o login")
                 return redirect('login')
@@ -56,7 +56,3 @@ def cadastro(request):
             return redirect('login')
 
     return render(request, 'usuarios/cadastro.html', {"form": form})
-def logout(request):
-    auth.logout(request)
-    messages.success(request, "Logout efetuado com sucesso!")
-    return redirect("login")
