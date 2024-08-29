@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static '/assets/favicon/logo.png' %}" type="image/x-icon">
     <title>Instituto Biblico Fé</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +17,7 @@
 <body>
     <div class="pagina-inicial">
         <header class="cabecalho">
-            <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo do Instituto Biblico Fé" />
+            <img src="{% static '/assets/logo/Logo.png' %}" alt="Logo do Instituto Biblico Fé" style="width: 250px; height: 100px;" />
             <div class="cabecalho__busca">
                 <div class="busca__fundo">
                     <input class="busca__input" type="text" placeholder="O que você procura?">
@@ -27,6 +28,7 @@
         <main class="principal">
             <section class="menu-lateral">
                 <nav class="menu-lateral__navegacao">
+                    <h4 style="color: white; padding: 20px; font-size: 25px; text-decoration: underline;">Menu</h4>
                     <a href="{% url 'modulos' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
                     <a href="#"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Mais vistas</a>
                     <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Novas</a>
