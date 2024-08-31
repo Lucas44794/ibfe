@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Modulos(models.Model):
     nome = models.CharField(max_length=140, null=False, blank=False)
     legenda = models.CharField(max_length=180, null=False, blank=False)
-    foto = models.CharField(max_length=140, null=False, blank=False)
+    foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)
     tag = models.CharField(max_length=80, null=False, blank=False)
 
     def __str__(self):
@@ -14,7 +14,7 @@ class Cursos(models.Model):
     curso = models.CharField(max_length=100, null=False, blank=False)
     nome = models.CharField(max_length=140, null=False, blank=False)
     legenda = models.CharField(max_length=180, null=False, blank=False)
-    foto = models.CharField(max_length=140, null=False, blank=False)
+    foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)
     tag = models.CharField(max_length=80, null=False, blank=False)
     publicado = models.BooleanField(default=False)
 

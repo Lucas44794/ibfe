@@ -4,6 +4,7 @@
     <div class="pagina-inicial">
 
             <section class="conteudo">
+                {% if cards %}
                 <section class="banner">
                     <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner IBF">
                     <h1 class="banner__titulo">{{ curso.tag }}</h1>
@@ -12,7 +13,7 @@
                     <div class="cards">
                         <h2 class="cards__titulo">Cursos disponiveis para você</h2>
                         <ul class="cards__lista">
-                            {% if cards %}
+                            
                             {% for curso in cards %}
                             <li class="card">
                                 <a href="{% url 'curso' %}">
@@ -31,11 +32,12 @@
                             </li> 
                             {% endfor %}
                             {% else %}
-                            {% endif %}
+                            
                         </ul>
                     </div>
                 </section>
             </section>
+            {% endif %}
         </main>
     </div>
 
