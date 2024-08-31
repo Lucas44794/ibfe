@@ -1,0 +1,42 @@
+{% extends 'escola/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="pagina-inicial">
+
+            <section class="conteudo">
+                <section class="banner">
+                    <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner IBF">
+                    <h1 class="banner__titulo">{{ curso.tag }}</h1>
+                </section>
+                <section class="galeria">
+                    <div class="cards">
+                        <h2 class="cards__titulo">Cursos disponiveis para você</h2>
+                        <ul class="cards__lista">
+                            {% if cards %}
+                            {% for curso in cards %}
+                            <li class="card">
+                                <a href="{% url 'curso' %}">
+                                    <img class="card__imagem" src="{% static '/assets/imagens/modulos/' %}{{ curso.foto}}" alt="foto">
+                                </a>
+                                <span class="card__tag">{{ curso.tag }}</span>
+                                <div class="card__info">
+                                    <p class="card__titulo">{{ curso.nome }}</p>
+                                    <div class="card__texto">
+                                        <p class="card__descricao">{{ curso.legenda }}</p>
+                                        <span>
+                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
+                                        </span>
+                                    </div>
+                                </div>
+                            </li> 
+                            {% endfor %}
+                            {% else %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+
+{% endblock %}

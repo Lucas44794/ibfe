@@ -8,7 +8,7 @@ class loginForms(forms.Form):
         widget=forms.TextInput(
             attrs={
                 "class": "form-control",
-                "placeholder": "Ex.: João Silva"
+                "placeholder": "Ex.: jp1200"
             }
         )
     )
@@ -28,6 +28,17 @@ class loginForms(forms.Form):
 class CadastroForms(forms.Form):
     nome_cadastro=forms.CharField(
         label='Nome de Login',
+        required=True,
+        max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Ex.: js1000"
+            }
+        )
+    )
+    nome_completo=forms.CharField(
+        label='Nome Completo',
         required=True,
         max_length=100,
         widget=forms.TextInput(

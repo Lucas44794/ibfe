@@ -12,39 +12,28 @@
                     <div class="cards">
                         <h2 class="cards__titulo">Cursos disponiveis para você</h2>
                         <ul class="cards__lista">
+                            {% if cards %}
+                            {% for curso in cards %}
                             <li class="card">
                                 <a href="{% url 'curso' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
+                                    <img class="card__imagem" src="{% static '/assets/imagens/modulos/' %}{{ curso.foto}}" alt="foto">
                                 </a>
-                                <span class="card__tag">Estrelas</span>
+                                <span class="card__tag">{{ curso.tag }}</span>
                                 <div class="card__info">
-                                    <p class="card__titulo">Nome da foto</p>
+                                    <p class="card__titulo">{{ curso.nome }}</p>
                                     <div class="card__texto">
-                                        <p class="card__descricao">Fonte/fotógrafo/satélite</p>
+                                        <p class="card__descricao">{{ curso.legenda }}</p>
                                         <span>
                                             <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
                                         </span>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="card">
-                                <a href="{% url 'curso' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
-                                </a>
-                                <span class="card__tag">Estrelas</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">Nome da foto</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">Fonte/fotógrafo/satélite</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>  
+                            </li> 
+                            {% endfor %}
+                            {% else %}
+                            {% endif %}
                         </ul>
                     </div>
-                    
                 </section>
             </section>
         </main>
