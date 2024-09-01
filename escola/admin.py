@@ -7,7 +7,7 @@ class ListandoModulos(admin.ModelAdmin):
     list_per_page = 20
 
 class ListandoCursos(admin.ModelAdmin):
-    list_display = ("id", "nome", "curso", "tag")
+    list_display = ("id", 'curso', 'nome', 'legenda', 'modulo_tag', 'publicado')
     list_display_links = ("id", "nome")
     list_per_page = 20
 

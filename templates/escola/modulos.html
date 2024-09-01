@@ -15,8 +15,12 @@
                             {% if cards %}
                             {% for curso in cards %}
                             <li class="card">
-                                <a href="{% url 'curso' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/modulos/' %}{{ curso.foto}}" alt="foto">
+                                <a href="{% url 'curso' curso.id %}">
+                                {% if curso.foto == "" or curso.foto == null %}
+                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/not-found.png' %}" alt="foto">
+                                {% else %}
+                                    <img class="card__imagem" src="{{ curso.foto.url }}" alt="foto">
+                                {% endif %}
                                 </a>
                                 <span class="card__tag">{{ curso.tag }}</span>
                                 <div class="card__info">
