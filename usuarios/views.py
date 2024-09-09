@@ -35,20 +35,20 @@ def cadastro(request):
 
         if form.is_valid():
             if form.cleaned_data['senha_1'] != form.cleaned_data['senha_2']:
-                messages.error(request, "as senhas não são iguais")
-                return render(request, 'usuarios/cadastro.html', {"form": form, "error": "As senhas não coincidem."})
+                messages.error(request, "As senhas não coincidem.")
+                return render(request, 'usuarios/cadastro.html', {"form": form})
             
-            nome=form["nome_cadastro"].value()
-            email = form["email"].value()
-            senha = form["senha_1"].value()
+            nome = form.cleaned_data['nome_cadastro']
+            email = form.cleaned_data['email']
+            senha = form.cleaned_data['senha_1']
 
             if User.objects.filter(username=nome).exists():
-                messages.error(request, "Usuario já cadastrado")
+                messages.error(request, "Usuário já cadastrado")
                 return redirect('cadastro')
 
             usuario = User.objects.create_user(
                 username=nome,
-                email=form.email,
+                email=email,
                 password=senha
             )
             usuario.save()

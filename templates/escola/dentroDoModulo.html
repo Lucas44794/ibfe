@@ -12,14 +12,18 @@
                 <section class="galeria">
                     <div class="cards">
                         <h2 class="cards__titulo">Cursos disponiveis para você</h2>
+                        <ul class="cards__lista">
                         {% if cursoModulos %}
                         {% for curso in cursoModulos %}
-                        <ul class="cards__lista">
                             <li class="card">
                                 <a href="{% url 'curso' curso.id %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/modulos/' %}{{ curso.foto}}" alt="foto">
+                                {% if curso.foto == "" or curso.foto == null %}
+                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/not-found.png' %}" alt="foto">
+                                {% else %}
+                                    <img class="card__imagem" src="{{ curso.foto.url }}" alt="foto">
+                                {% endif %}
                                 </a>
-                                <span class="card__tag">{{ curso.tag }}</span>
+                                <span class="card__tag">{{ curso.modulo }}</span>
                                 <div class="card__info">
                                     <p class="card__titulo">{{ curso.nome }}</p>
                                     <div class="card__texto">
